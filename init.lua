@@ -1,10 +1,11 @@
 -- Copyright (c) 2016 dy008
 -- https://github.com/dy008/NodeMcuForLEWEI50Test
 --
+wifi.sta.config("dy-home","miqihome008")
 
 gpio.write(0, gpio.LOW)    -- VFD ON
 gpio.mode(0, gpio.OUTPUT)
-gpio.mode(8, gpio.INT)    -- 感应输入
+gpio.mode(7, gpio.INT)    -- 感应输入
 
 print("Connecteing To wifi...")
 enduser_setup.start(
@@ -29,6 +30,6 @@ enduser_setup.start(
     print("enduser_setup: Err #" .. err .. ": " .. str)
     node.restart()
   end
-);
+)
 
 
